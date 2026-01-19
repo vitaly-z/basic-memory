@@ -116,7 +116,9 @@ class TestTrack:
         created: list[_StubOpenPanel] = []
 
         def openpanel_factory(*, client_id, client_secret, disabled=False):
-            client = _StubOpenPanel(client_id=client_id, client_secret=client_secret, disabled=disabled)
+            client = _StubOpenPanel(
+                client_id=client_id, client_secret=client_secret, disabled=disabled
+            )
             created.append(client)
             return client
 
@@ -185,7 +187,9 @@ class TestConvenienceFunctions:
         created: list[_StubOpenPanel] = []
 
         def openpanel_factory(*, client_id, client_secret, disabled=False):
-            client = _StubOpenPanel(client_id=client_id, client_secret=client_secret, disabled=disabled)
+            client = _StubOpenPanel(
+                client_id=client_id, client_secret=client_secret, disabled=disabled
+            )
             created.append(client)
             return client
 
@@ -205,7 +209,9 @@ class TestConvenienceFunctions:
         created: list[_StubOpenPanel] = []
 
         def openpanel_factory(*, client_id, client_secret, disabled=False):
-            client = _StubOpenPanel(client_id=client_id, client_secret=client_secret, disabled=disabled)
+            client = _StubOpenPanel(
+                client_id=client_id, client_secret=client_secret, disabled=disabled
+            )
             created.append(client)
             return client
 
@@ -225,7 +231,9 @@ class TestConvenienceFunctions:
         created: list[_StubOpenPanel] = []
 
         def openpanel_factory(*, client_id, client_secret, disabled=False):
-            client = _StubOpenPanel(client_id=client_id, client_secret=client_secret, disabled=disabled)
+            client = _StubOpenPanel(
+                client_id=client_id, client_secret=client_secret, disabled=disabled
+            )
             created.append(client)
             return client
 
@@ -245,7 +253,9 @@ class TestConvenienceFunctions:
         created: list[_StubOpenPanel] = []
 
         def openpanel_factory(*, client_id, client_secret, disabled=False):
-            client = _StubOpenPanel(client_id=client_id, client_secret=client_secret, disabled=disabled)
+            client = _StubOpenPanel(
+                client_id=client_id, client_secret=client_secret, disabled=disabled
+            )
             created.append(client)
             return client
 
@@ -264,5 +274,3 @@ class TestConvenienceFunctions:
         _, props = created[0].events[-1]
         assert "C:\\Users\\john" not in props["message"]
         assert "[FILE]" in props["message"]
-
-

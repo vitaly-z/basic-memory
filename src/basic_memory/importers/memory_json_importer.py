@@ -13,9 +13,7 @@ logger = logging.getLogger(__name__)
 class MemoryJsonImporter(Importer[EntityImportResult]):
     """Service for importing memory.json format data."""
 
-    def handle_error(
-        self, message: str, error: Optional[Exception] = None
-    ) -> EntityImportResult:
+    def handle_error(self, message: str, error: Optional[Exception] = None) -> EntityImportResult:
         """Return a failed EntityImportResult with an error message."""
         error_msg = f"{message}: {error}" if error else message
         return EntityImportResult(

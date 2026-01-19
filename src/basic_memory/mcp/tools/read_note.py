@@ -136,7 +136,9 @@ async def read_note(
             if result.permalink:
                 try:
                     # Resolve the permalink to entity ID
-                    entity_id = await resolve_entity_id(client, active_project.external_id, result.permalink)
+                    entity_id = await resolve_entity_id(
+                        client, active_project.external_id, result.permalink
+                    )
 
                     # Fetch content using the entity ID
                     response = await call_get(

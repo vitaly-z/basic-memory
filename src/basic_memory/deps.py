@@ -130,7 +130,9 @@ async def get_project_config_v2_external(
     )
 
 
-ProjectConfigV2ExternalDep = Annotated[ProjectConfig, Depends(get_project_config_v2_external)]  # pragma: no cover
+ProjectConfigV2ExternalDep = Annotated[
+    ProjectConfig, Depends(get_project_config_v2_external)
+]  # pragma: no cover
 
 ## sqlalchemy
 
@@ -327,7 +329,9 @@ async def get_entity_repository_v2_external(
     return EntityRepository(session_maker, project_id=project_id)
 
 
-EntityRepositoryV2ExternalDep = Annotated[EntityRepository, Depends(get_entity_repository_v2_external)]
+EntityRepositoryV2ExternalDep = Annotated[
+    EntityRepository, Depends(get_entity_repository_v2_external)
+]
 
 
 async def get_observation_repository(
@@ -397,7 +401,9 @@ async def get_relation_repository_v2_external(
     return RelationRepository(session_maker, project_id=project_id)
 
 
-RelationRepositoryV2ExternalDep = Annotated[RelationRepository, Depends(get_relation_repository_v2_external)]
+RelationRepositoryV2ExternalDep = Annotated[
+    RelationRepository, Depends(get_relation_repository_v2_external)
+]
 
 
 async def get_search_repository(
@@ -434,7 +440,9 @@ async def get_search_repository_v2_external(
     return create_search_repository(session_maker, project_id=project_id)
 
 
-SearchRepositoryV2ExternalDep = Annotated[SearchRepository, Depends(get_search_repository_v2_external)]
+SearchRepositoryV2ExternalDep = Annotated[
+    SearchRepository, Depends(get_search_repository_v2_external)
+]
 
 
 # ProjectInfoRepository is deprecated and will be removed in a future version.
@@ -488,7 +496,9 @@ async def get_markdown_processor_v2_external(
     return MarkdownProcessor(entity_parser, app_config=app_config)
 
 
-MarkdownProcessorV2ExternalDep = Annotated[MarkdownProcessor, Depends(get_markdown_processor_v2_external)]
+MarkdownProcessorV2ExternalDep = Annotated[
+    MarkdownProcessor, Depends(get_markdown_processor_v2_external)
+]
 
 
 async def get_file_service(
@@ -848,7 +858,9 @@ async def get_directory_service_v2_external(
     )
 
 
-DirectoryServiceV2ExternalDep = Annotated[DirectoryService, Depends(get_directory_service_v2_external)]
+DirectoryServiceV2ExternalDep = Annotated[
+    DirectoryService, Depends(get_directory_service_v2_external)
+]
 
 
 # Import
@@ -1011,4 +1023,6 @@ async def get_memory_json_importer_v2_external(
     return MemoryJsonImporter(project_config.home, markdown_processor, file_service)
 
 
-MemoryJsonImporterV2ExternalDep = Annotated[MemoryJsonImporter, Depends(get_memory_json_importer_v2_external)]
+MemoryJsonImporterV2ExternalDep = Annotated[
+    MemoryJsonImporter, Depends(get_memory_json_importer_v2_external)
+]

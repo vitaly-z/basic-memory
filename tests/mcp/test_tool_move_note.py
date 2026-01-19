@@ -904,5 +904,3 @@ class TestMoveNoteSecurityValidation:
             assert isinstance(result, str)
             # Should NOT contain security error message
             assert "Security Validation Error" not in result
-
-
